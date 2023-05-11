@@ -13,9 +13,15 @@ function refundOrder(orderNumber, deliveryOrders) {
   }
 }
 
-function listItems() {
+function listItems(deliveryOrders) {
+  var items = ' '
+  for(var i = 0; i < deliveryOrders.length; i ++) {
+    items += deliveryOrders[i].item + ', ';
+    
+  }
+  return items
+  }
 
-}
 
 
 
