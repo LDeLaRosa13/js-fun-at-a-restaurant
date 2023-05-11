@@ -1,5 +1,20 @@
 function takeOrder(order, deliveryOrders) {
+  if(deliveryOrders.length < 3) {
   deliveryOrders.push(order)
+  }
+}
+
+function refundOrder(orderNumber, deliveryOrders) {
+  for( var i = 0; i < deliveryOrders.length; i++) {
+    if(deliveryOrders[i].orderNumber === orderNumber) {
+      deliveryOrders.splice(i, 1)
+
+    }
+  }
+}
+
+function listItems() {
+
 }
 
 
@@ -12,7 +27,7 @@ function takeOrder(order, deliveryOrders) {
 
 module.exports = {
   takeOrder,
-  // refundOrder,
-  // listItems,
+  refundOrder,
+  listItems,
   // searchOrder
 }
