@@ -1,6 +1,6 @@
 function takeOrder(order, deliveryOrders) {
   if(deliveryOrders.length < 3) {
-  deliveryOrders.push(order)
+    deliveryOrders.push(order)
   }
 }
 
@@ -13,17 +13,12 @@ function refundOrder(orderNumber, deliveryOrders) {
 }
 
 function listItems(deliveryOrders) {
-  var items = '';
-  var lastIndex = deliveryOrders.length -1
-  for(var i = 0; i < deliveryOrders.length; i ++) {
-    if(deliveryOrders[i] === deliveryOrders[lastIndex]) {
-      items += deliveryOrders[i].item
-    } else {
-      items += deliveryOrders[i].item
-      items += ', '
-    }
+  var items = [];
+  for ( var i = 0; i < deliveryOrders.length; i++) {
+    items.push(deliveryOrders[i].item)
   }
-    return items;
+    var stringItems = items.join(', ')
+    return stringItems
   }
 
   function searchOrder(deliveryOrders, itemName) {
@@ -34,14 +29,6 @@ function listItems(deliveryOrders) {
     }
     return false
   }
-
-
-
-
-
-
-
-
 
 module.exports = {
   takeOrder,
